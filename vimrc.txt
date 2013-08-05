@@ -1,0 +1,41 @@
+syn on
+set paste
+color elflord
+set textwidth=0
+set wrapmargin=0
+set tabstop=4
+set shiftwidth=4
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set display=lastline
+"set formatoptions+=l
+"trying without "+" whatever that is
+set formatoptions=l
+" let's set text width to 80 characters
+"set textwidth=72
+set textwidth=120
+" this is disabled when set paste is set
+"set formatoptions=l
+"http://vim.1045645.n5.nabble.com/Problems-with-visual-word-wrap-td1179098.html
+" new options here
+"set smarttab autoindent
+"set smartindent
+"set nocompatible
+set scrolloff=3     " keep 3 lines when scrolling
+set showcmd         " display incomplete commands
+set hlsearch        " highlight searches
+set incsearch       " do incremental searching
+set ruler           " show the cursor position all the time
+set ignorecase      " ignore case when searching
+"set noignorecase   " don't ignore case
+set title           " show title in console title bar
+set ttyfast         " smoother changes
+set modeline        " last lines in document sets vim mode
+set modelines=3     " number lines checked for modelines
+set shortmess=atI   " Abbreviate messages
+set nostartofline   " don't jump to first character when paging
+set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
+set viminfo='20,<50,s10,h
+set clipboard+=unnamed  " yank and copy to X clipboard
+set backspace=2         " full backspacing capabilities

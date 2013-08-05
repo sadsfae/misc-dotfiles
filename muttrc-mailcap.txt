@@ -1,0 +1,42 @@
+# HTML email for jerks who use it
+# in .muttrc you need
+# set mailcap_path    = ~/.mutt/mailcap
+text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+# PDF wth evince
+application/pdf; evince %s;
+
+# spreadsheets
+application/vnd.ms-excel; libreoffice %s;
+application/vnd.openxml; libreoffice %s;
+application/excel; libreoffice %s;
+application/msexcel; libreoffice %s;
+application/x-excel; libreoffice %s;
+application/x-msexcel; libreoffice %s;
+application/vnd.oasis.opendocument.spreadsheet; libreoffice %s;
+
+# slide decks
+application/powerpoint; libreoffice %s;
+application/vnd.ms-powerpoint; libreoffice %s;
+application/x-mspowerpoint; libreoffice %s;
+application/mspowerpoint; libreoffice %s;
+application/vnd.oasis.opendocument.presentation; libreoffice %s;
+application/ppt; libreoffice %s;
+application/pptx; libreoffice %s;
+
+# documents
+application/msword; libreoffice %s;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s;
+application/vnd.openxml; libreoffice %s;
+application/vnd.sun.xml.writer; libreoffice %s ;
+application/vnd.oasis.opendocument.text; libreoffice %s ;
+
+# images
+image/jpeg; eog %s 
+image/gif; eog %s 
+image/GIF; eog %s 
+image/JPG; eog %s 
+image/jpg; eog %s
+image/png; eog %s
+image/PNG; eog %s
+image/jpeg; eog %s
+image/JPEG; eog %s

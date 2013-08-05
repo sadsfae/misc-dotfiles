@@ -1,0 +1,23 @@
+#change the hardstatus settings to give an window list at the bottom of the                                                                                    
+#screen, with the time and date and with the current window highlighted                                                                                        
+hardstatus alwayslastline                                                                                                                                      
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %Y-%m-%d %{W}%c %{g}]'                    
+
+# more tweaks
+# turn off annoying dogs
+vbell off
+
+# always show caption (information about current window/region) with customized tabs
+# be like elephant, don't forget anything
+defscrollback 10000
+
+# define screens here
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
+screen -t shell
