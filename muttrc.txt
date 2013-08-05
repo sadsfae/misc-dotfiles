@@ -1,27 +1,29 @@
 # nice manpage here
 # http://linux.die.net/man/5/muttrc
-# first turn off user_agent
 set user_agent=no
+# you can have fun with user agent
 #my_hdr User-Agent:Mutt/1.5.21_3 (FreeBSD/amd64)
 # set for muttrc patch
 set sidebar_width       = 24
 set sidebar_visible     = yes
 color sidebar_new yellow default
+
 # dont mark messages old
 set mark_old = no
+
 # these bind keys for the folder pane
 # ctrl-n, ctrl-p to select next, prev folder 
 # ctrl-o to open selected folder 
-### EDIT EDIT NEW EDIT
-### edit try new colors
 color   tree        magenta             default
+
 # new set sidebar delim
 set sidebar_delim='★'
-### EDIT EDIT
-##  ★
+
 ### edit try new colors
 color   tree        magenta             default
-### EDIT MARK ALL READ
+
+### MARK ALL READ MACRO
+### ".r"
 macro index .r "T.*\n;WN" "party time, excellent"
 bind index \CP sidebar-prev 
 bind index \CN sidebar-next 
@@ -29,45 +31,48 @@ bind index \CO sidebar-open
 bind pager \CP sidebar-prev 
 bind pager \CN sidebar-next 
 bind pager \CO sidebar-open 
-#set folder="~/Mail/mailboxes"
-##set edit_headers = yes
+
 # jump to next-unread, bind a key here
 bind index \t next-unread
 bind pager   \t          next-unread
 bind index  ,\t      previous-unread
 bind pager  ,\t      previous-unread
+
 # LDAP search
 # http://www.perlmonks.org/?node_id=65152
 set query_command = "~/.mutt/mutt-ldap-lookup.pl '%s'"
+
 # sort by thread
 set sort = threads
+
 # b toggles sidebar visibility 
 #macro index b '<enter-command>toggle sidebar_visible<enter>' 
 #macro pager b '<enter-command>toggle sidebar_visible<enter>' 
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>' 
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
+
 ### save my sent messages
 set record=~/Maildir/Sent
+
 #### useful settings from docs
 # activate TLS if available on the server
 #set signature = "~/.signature"
 set ssl_starttls=yes
+
 # always use SSL when connecting to a server
 set ssl_force_tls=yes
+
 # Don't wait to enter mailbox manually 
 unset imap_passive        
-#       # Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
+
 set imap_check_subscribed
-# Reduce polling frequency to a sane level
-## trobert banhammer
-##set mail_check=60
-set mail_check=300
-# And poll the current mailbox more often (not needed with IDLE in post 1.5.11)
-set timeout=10
+
 # keep a cache of headers for faster loading (1.5.9+?)
 set header_cache=~/.mutt/hcache
+
 # Display download progress every 5K
 set net_inc=5
+
 # force envelope and sender
 set use_from
 set envelope_from
@@ -75,12 +80,15 @@ set hostname="someplace.com"
 set realname="YOUR NAME"
 set from="YOU@someplace.com"
 set spoolfile=~/Maildir/INBOX
+
 # NEEDED for maildir format
 set mbox_type=Maildir
+
 # set your main Maildir inbox here
 # from where offlineimap syncs
 set folder=~/Maildir/
-# set your IMAP folders to match zimbra
+
+# set your IMAP folders to match whatever your MTA uses
 mailboxes =INBOX \
 =Sent \
 =Drafts \
@@ -108,7 +116,6 @@ mailboxes =INBOX \
 
 set move=no
 set certificate_file=/home/YOU/.mutt-certificates
-# 
 ignore *
 unignore From To Cc Subject Date Reply-To Organization X-Mailer User-Agent
 
@@ -141,13 +148,16 @@ set quote_regexp="^([A-Za-z ]+>|[]%>:|}-][]>:|}-]*)"
 
 # set my smtp server
 set smtp_url="smtp://your.smtp.server.here"
+
 #set smtp_authenticators=”gssapi:digest-md5:cram-md5”
 set sendmail="/usr/sbin/sendmail"
+
 # HTML email, for those that insist on using it
 # make sure your mailcap entry exists with the following:
 # text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 # tell mutt about it
 set mailcap_path 	= ~/.mutt/mailcap
+
 # automatically open evil HTML
 auto_view text/html
 
@@ -162,24 +172,23 @@ color quoted5   red         default
 color quoted6   blue        default
 color signature green       default
 color tilde     cyan  default
-### EDIT EDIT
+
 ### make new messages yellow
 color index brightyellow default ~N # New#
-#color header white          black   .               # Headers are this color,
-#color header white    black   ^Subject        # except for `Subject:'.
-### latest edit
+
 color header white         default .               # Headers are this color,
 color header red    white ^Subject        # except for `Subject:'.
 color header black          red     ^(X-Spam-Status:\ Yes|X-Virus-Report:)
 color header black          red     ^Newsgroups:.*, # cross-posted
 color header black          green   ^Followup-To:   # followup header
+
 ## changing color status to default, was brightblue black
 color status    brightblue default
+
 # indicator is the marker thing that moves to highlight messages and shit
 #color innext unread messagedicator green default
 color indicator default red
-## was cyan default
-#color markers green red
 color markers   cyan  black
+
 # load gpg configs
 source ~/.muttrc-gpg
