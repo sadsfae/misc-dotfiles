@@ -3,6 +3,8 @@
 # set useragent to somethign awesome like eck
 # first turn off user_agent
 # toggle flagged messages
+# https://github.com/neomutt/neomutt/issues/621
+bind index . noop
 # .i will show all new/flagged
 macro index .i  "<limit>(~N|~F)<Enter>"  "view new/flag"
 # .a will show all again
