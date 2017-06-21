@@ -1,0 +1,39 @@
+# offlineimaprc for use with gmail
+# this is normally stored in ~/.offlineimaprc
+# you can also use this to sync via cron:
+# https://raw.githubusercontent.com/sadsfae/misc-scripts/master/shell/mailsync.sh
+[general]
+accounts = ExampleCompany
+
+[Account ExampleCompany]
+localrepository = ExampleCompanyLocal
+remoterepository = ExampleCompanyRemote
+postsynchook = notmuch new
+status_backend = sqlite
+
+[Repository ExampleCompanyRemote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteuser = sadsfae@ExampleCompany.com
+ssl = yes
+starttls = no
+sslcacertfile = /etc/ssl/certs/ca-bundle.crt
+### You'll need to configure the gmail API stuff here:
+# https://github.com/OfflineIMAP/offlineimap/blob/master/offlineimap.conf#L858
+# https://github.com/OfflineIMAP/offlineimap/blob/master/offlineimap.conf#L886-L894
+auth_mechanisms = XOAUTH2
+oauth2_client_id = YOUR_CLIENT_ID_HERE
+oauth2_client_secret = YOUR_CLIENT_SECRET_HERE
+oauth2_request_url = https://accounts.google.com/o/oauth2/token
+oauth2_refresh_token = YOUR_REFRESH_TOKEN_HERE
+## remove Gmail prefix on IMAP folders
+nametrans = lambda f: f.replace('[Gmail]/', '') if f.startswith('[Gmail]/') else f
+
+[Repository ExampleCompanyLocal]
+type = Maildir
+localfolders = ~/Maildir
+restoreatime = no
+# Do not sync this folder
+folderfilter = lambda folder: folder not in ['2007-2011-inbox']
+## Remove GMAIL prefix on Google-specific IMAP folders that are pulled down.
+nametrans = lambda f: '[Gmail]/' + f if f in ['Drafts', 'Starred', 'Important', 'Spam', 'Trash', 'All Mail', 'Sent Mail'] else f
