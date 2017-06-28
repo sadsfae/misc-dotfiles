@@ -13,7 +13,9 @@ set user_agent=no
 my_hdr User-Agent:Mutt/1.6.2-neo (NetBSD/sparc64)
 # show message count in sidebar
 # https://github.com/neomutt/neomutt/releases
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+#set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+### edit: removing flagged messages tag, people abuse this
+set sidebar_format = "%B %* %?N?%N/?%S"
 set mail_check_stats = yes
 set sidebar_width = 30
 set sidebar_visible     = yes
