@@ -44,3 +44,5 @@ export MM_CHARSET=utf8
         source /usr/local/share/bash-completion/bash_completion.sh
 
 #### END USER ENTRIES ####
+#### make sure you have this file
+export TERM=~/.xterm-256color-italic 
