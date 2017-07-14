@@ -45,4 +45,4 @@ export MM_CHARSET=utf8
 
 #### END USER ENTRIES ####
 #### make sure you have this file
-export TERM=~/.xterm-256color-italic 
+export TERM=xterm-256color-italic 
