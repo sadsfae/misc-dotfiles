@@ -1,0 +1,137 @@
+syn on
+"color elflord
+syntax enable
+let g:solarized_termtrans=1
+set textwidth=0
+set wrapmargin=0
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set display=lastline
+"nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" map \wn to show whitespace
+map <Leader>wn /\s\+$/<CR>
+set formatoptions=l
+" let's set text width to 80 characters
+set textwidth=80
+" this is disabled when set paste is set
+"http://vim.1045645.n5.nabble.com/Problems-with-visual-word-wrap-td1179098.html
+set nocompatible
+set scrolloff=3     " keep 3 lines when scrolling
+set showcmd         " display incomplete commands
+set hlsearch        " highlight searches
+set incsearch       " do incremental searching
+set ruler           " show the cursor position all the time
+set ignorecase      " ignore case when searching
+set title           " show title in console title bar
+set ttyfast         " smoother changes
+set modeline        " last lines in document sets vim mode
+set modelines=3     " number lines checked for modelines
+set shortmess=atI   " Abbreviate messages
+set nostartofline   " don't jump to first character when paging
+set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
+set viminfo='20,<50,s10,h
+set clipboard+=unnamed  " yank and copy to X clipboard
+set backspace=2         " full backspacing capabilities
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>iul :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" EDIT EDIT vim jedi "
+" don't turn on jedi by default
+"let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 1
+"set this for indent freaking out
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" " when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+set expandtab
+""" yaml plugin
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/plugin/yaml.vim
+" Python plugin
+let python_highlight_all = 1
+" vim airline stuff
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+set laststatus=2
+let g:airline_powerline_fonts = 1
+set t_Co=256
+"" use plug installer
+""" PLUG
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'chase/vim-ansible-yaml'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'https://github.com/hdima/python-syntax'
+Plug 'https://github.com/ingydotnet/yaml-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'godlygeek/tabular'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'wellle/tmux-complete.vim'
+Plug 'tpope/vim-obsession'
+Plug 'kien/ctrlp.vim'
+Plug 'powerline/powerline'
+Plug 'scrooloose/nerdtree'
+Plug 'davidhalter/jedi-vim'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'pearofducks/ansible-vim'
+"
+" " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" Plug 'junegunn/vim-easy-align'
+"
+" " Any valid git URL is allowed
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"
+" " Group dependencies, vim-snippets depends on ultisnips
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"
+" " On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"
+" " Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"
+" " Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+" " Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+" " Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+"
+" " Add plugins to &runtimepath
+call plug#end()
+"" EDIT EDIT enable moonlight / moonfly
+colorscheme moonfly
+""colorscheme solarized
+let g:moonflyCursorLineNr = 0
+" make hightlighted/selected text white
+hi Visual term=reverse cterm=reverse guibg=Grey
+"" EDIT EDIT force comments to be darkgreen
+highlight Comment ctermfg=darkgreen
+"" EDIT EDIT make comments italics
+highlight Comment cterm=italic
+"" EDIT EDIT
+"" ansible vim settings
+"" https://github.com/pearofducks/ansible-vim
+let g:ansible_unindent_after_newline = 1
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
