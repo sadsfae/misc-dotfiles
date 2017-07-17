@@ -46,6 +46,7 @@ export MM_CHARSET=utf8
 #### END USER ENTRIES ####
 #### make sure you have this file
 # This need to be done once:
+# https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
 # curl https://gist.githubusercontent.com/sadsfae/0b4dd18670639f7dce941a1b2a9e4e9e/raw/908b48e6b6370da0568be8d138966c60240a50dd/xterm-256color-italic.terminfo > xterm-256color-italic
 # tic xterm-256color-italic
-export TERM=xterm-256color-italic 
+#export TERM=xterm-256color-italic 
