@@ -146,6 +146,9 @@ set date_format="%d/%m/%y %H:%M %Z"
 set quote_regexp="^([A-Za-z ]+>|[]%>:|}-][]>:|}-]*)"
 
 set smtp_url="smtp://smtp.corp.example.com"
+### GMAIL USERS NEED THIS:
+### set smtp_url = 'smtps://username@examplecompany.com@smtp.gmail.com'
+### set smtp_pass = 'YOUR_APP_PASSWORD'
 set sendmail="/usr/sbin/sendmail"
 set mailcap_path 	= ~/.mutt/mailcap
 # automatically open evil HTML
@@ -177,7 +180,7 @@ color header black          red     ^(X-Spam-Status:\ Yes|X-Virus-Report:)
 color header black          red     ^Newsgroups:.*, # cross-posted
 color header black          green   ^Followup-To:   # followup header
 color status    brightblue default
-color indicator default red 
+color indicator default red
 color markers   cyan  black
 ## GPG encrypt to self option
 # http://www.neomutt.org/feature/smime-encrypt-self/
