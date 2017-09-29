@@ -1,0 +1,11 @@
+[Desktop Entry]
+## Generic .desktop example, edit to your liking
+Name=Mattermost
+Comment=Mattermost Collaboration Platform
+Exec=/home/username/Downloads/mattermost-desktop-3.7.1/mattermost-desktop
+Icon=/home/username/Downloads/mattermost-desktop-3.7.1/icon.png
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Network;Application;
+Path=
