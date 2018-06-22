@@ -9,7 +9,8 @@ accounts = ExampleCompany
 localrepository = ExampleCompanyLocal
 remoterepository = ExampleCompanyRemote
 postsynchook = notmuch new
-status_backend = sqlite
+#newer versions don't need this
+#status_backend = sqlite
 
 [Repository ExampleCompanyRemote]
 type = IMAP
