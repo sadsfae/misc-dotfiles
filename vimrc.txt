@@ -147,3 +147,6 @@ let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
+"" FOR VIM WE WANT TO USE FILETYPE OF MAIL AND REASONABLE SETTINGS
+""" EDIT EDIT MAIL TYPES
+autocmd BufNewFile,BufRead /tmp/neomutt-* set noautoindent filetype=mail wm=0 tw=78 nonumber digraph nolist nopaste
