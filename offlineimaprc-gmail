@@ -19,6 +19,8 @@ remoteuser = sadsfae@ExampleCompany.com
 ssl = yes
 starttls = no
 sslcacertfile = /etc/ssl/certs/ca-bundle.crt
+# with Fedora30+ this is needed now
+ssl_version=tls1_2
 ### You'll need to configure the gmail API stuff here:
 # https://github.com/OfflineIMAP/offlineimap/blob/master/offlineimap.conf#L858
 # https://github.com/OfflineIMAP/offlineimap/blob/master/offlineimap.conf#L886-L894
