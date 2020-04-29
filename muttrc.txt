@@ -75,6 +75,9 @@ set timeout=10
 set header_cache=~/Localmail/hcache
 # Display download progress every 5K
 set net_inc=5
+# set set sidebar_short_path=yes for newer versions
+# https://github.com/neomutt/neomutt/issues/2293
+set sidebar_short_path=yes
 # force envelope and sender
 set use_from
 set envelope_from
