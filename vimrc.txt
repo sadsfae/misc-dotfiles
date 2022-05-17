@@ -2,6 +2,9 @@ syn on
 "color elflord
 syntax enable
 let g:solarized_termtrans=1
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR>
+" control-w E toggles syntasticcheck
 set textwidth=0
 set wrapmargin=0
 set wrap
@@ -37,7 +40,7 @@ set backspace=2         " full backspacing capabilities
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>iul :set list!<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
