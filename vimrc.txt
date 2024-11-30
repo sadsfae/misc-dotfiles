@@ -9,6 +9,10 @@
     " ale shellcheck warning excludes
     let g:ale_sh_shellcheck_exclusions='SC2086'
     let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+    " ale remap control + k and control + j
+    " to move between errors found by linters
+    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+    nmap <silent> <C-j> <Plug>(ale_next_wrap)
     nnoremap <C-w>E :SyntasticCheck<CR>
     " control-w E toggles syntasticcheck
     let g:solarized_termtrans=1
